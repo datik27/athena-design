@@ -1,0 +1,546 @@
+$blackColor: #000000;
+$whiteColor: #ffffff;
+$font-weight: 700;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+}
+li {
+  list-style: none;
+}
+a:hover {
+  text-decoration: none !important;
+}
+.allHeading {
+  font-family: "Yeseva One", cursive;
+  font-weight: 700;
+  font-size: 33px;
+}
+@mixin radiusButton {
+  //   background: linear-gradient(128deg, #2af598 0%, #009efd 100%) !important;
+  //   font-size: 18px !important;
+  //   color: $whiteColor !important;
+  //   border-radius: 20px 0px 20px 0px !important;
+  //   font-weight: 500 !important;
+
+  border-radius: 20px 0px 20px 0px !important;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  background: rgb(31, 222, 179);
+  background: -moz-linear-gradient(
+    132deg,
+    rgba(31, 222, 179, 1) 20%,
+    rgba(1, 161, 249, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    132deg,
+    rgba(31, 222, 179, 1) 20%,
+    rgba(1, 161, 249, 1) 100%
+  );
+  background: linear-gradient(
+    132deg,
+    rgba(31, 222, 179, 1) 20%,
+    rgba(1, 161, 249, 1) 100%
+  );
+}
+@mixin afterBefore {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+  content: "";
+  position: absolute;
+}
+@mixin pathBg {
+  .store {
+    .store-Section {
+      .store_section_bg {
+        background-image: none !important;
+      }
+    }
+  }
+}
+
+@mixin position {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+@mixin newPosition {
+  position: absolute;
+  width: 100%;
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-position: bottom left;
+  z-index: -222;
+}
+@mixin repeatContent {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+//navbar scss
+.navbar {
+  .navbar-brand {
+    img {
+      width: 100px;
+    }
+  }
+  #navbarSupportedContent {
+    .nav-link {
+      color: #000000;
+      font-weight: 400;
+      &:hover {
+        font-weight: $font-weight !important;
+        z-index: 222;
+      }
+    }
+    .active {
+      font-weight: $font-weight !important;
+    }
+    .contactBtn {
+      button {
+        @include radiusButton;
+        color: #ffffff !important;
+        outline: none !important;
+        font-weight: 400 !important;
+        &:hover {
+          font-weight: $font-weight !important;
+        }
+      }
+    }
+  }
+}
+
+//header scss
+.banner {
+  height: 135vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-top: 0px;
+  .navBg {
+    position: absolute;
+    top: -231px;
+    left: -150px;
+    background: url("./images/Group\ 45@2x.png");
+    background-repeat: repeat;
+    background-size: auto;
+    width: 100%;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .bgRight {
+    &::before {
+      @include newPosition;
+      top: 106px;
+      left: -340px;
+      background-image: url("./images/Path\ 76.png");
+      height: 100vh;
+    }
+    &::after {
+      @include newPosition;
+      top: 0px;
+      right: -550px;
+      background: url("./images/Group\ 46.png");
+      height: 100vh;
+    }
+  }
+  .bgDot {
+    &::before {
+      @include newPosition;
+      top: -35px;
+      left: 35%;
+      background: url("./images/Group\ 49.png");
+      width: 132px;
+      height: 150px;
+      background-size: contain;
+      background-size: contain;
+    }
+    &::after {
+      @include newPosition;
+      top: 40%;
+      left: -50px;
+      width: 132px;
+      height: 80px;
+      background: url("./images/Group\ 49.png");
+      background-size: contain;
+    }
+    .bgText {
+      &::before {
+        @include newPosition;
+        top: 100px;
+        right: -380px;
+        height: 300px;
+        background: url("./images/STUDIO.png");
+        width: 600px;
+        background-size: contain;
+        background-position: right top;
+      }
+      &::after {
+        @include newPosition;
+        @include repeatContent;
+        bottom: 0px;
+        left: -120px;
+        height: 300px;
+        background: url("./images/STUDIO.png");
+        width: 500px;
+        background-position: right bottom;
+      }
+      .topDot {
+        &::before {
+          @include newPosition;
+          @include repeatContent;
+          top: 10px;
+          left: 91px;
+          height: 200px;
+          background: url("./images/Ellipse\ 14.png");
+          width: 500px;
+        }
+        &::after {
+          @include newPosition;
+          @include repeatContent;
+          top: 9px;
+          right: 200px;
+          height: 228px;
+          background: url("./images/Ellipse\ 14.png");
+          width: 500px;
+        }
+        .bottomDot {
+          &::before {
+            @include newPosition;
+            @include repeatContent;
+            bottom: 0px;
+            right: 700px;
+            height: 228px;
+            background-image: url("./images/Ellipse\ 13.png");
+            width: 500px;
+          }
+        }
+      }
+    }
+  }
+  .header_info {
+    p {
+      color: #7c7c7c;
+      font-weight: 300;
+    }
+    h1 {
+      font-family: "Yeseva One", cursive;
+      font-size: 70px;
+      font-weight: $font-weight;
+      color: #0d052e;
+    }
+
+    button {
+      @include radiusButton;
+      width: 178px;
+      height: 60px;
+      outline: none;
+      border: none;
+    }
+  }
+}
+
+//share background image scss
+.shaireBg {
+  @include position;
+  overflow: hidden;
+  &::before {
+    @include afterBefore;
+    top: 300px;
+    right: -650px;
+    height: 200vh;
+    width: 100%;
+    background-image: url("./images/Group\ 46.png");
+    overflow: hidden;
+  }
+}
+
+//store scss
+.store {
+  .store-Section {
+    .store_section_bg {
+      background-image: url("./images/Path 74.png");
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+  }
+}
+
+.store_box {
+  .store_card {
+    .card {
+      // border: none !important;
+      border: 2px solid transparent!important;
+      border-radius: 60px 0 60px 0;
+      transition: all 1s ease-in-out;
+      box-sizing: border-box;
+      background: transparent !important;
+      padding: 10px;
+      &:hover {
+        background: $whiteColor !important;
+        transition: all 1s ease-in-out;
+        background-color: $whiteColor;
+        box-shadow: 5px 5px 15px rgb(207, 207, 207);
+        border: 2px solid #b2d4ff !important;
+        box-sizing: border-box;
+        
+        // padding: 10px;
+      }
+      .store_img {
+        width: 115px;
+        height: 115px;
+        margin: auto;
+      }
+      .body_card {
+        .store_title {
+          font-size: 20px;
+          color: #34285c;
+          font-weight: 600;
+        }
+        .store_text {
+          font-size: 16px;
+          color: #8d8d8d;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+//run project scss;
+.run-project {
+  background: $whiteColor;
+  padding: 50px 0;
+  .run-project-info {
+    h1 {
+      color: #0d052e;
+      font-weight: 400;
+    }
+    p {
+      font-size: 15px;
+      line-height: 30px;
+      color: #8d8d8d;
+      font-weight: 400;
+      margin: 15px 0;
+    }
+    button {
+      @include radiusButton;
+      width: 178px;
+      height: 60px;
+    }
+  }
+  .imgPositioning {
+    @include position;
+    &::before {
+      @include afterBefore;
+      bottom: -97px;
+      right: -371px;
+      width: 100%;
+      background-image: url("./images/Ellipse\ 16.png");
+      height: 200px;
+    }
+    &::after {
+      @include afterBefore;
+      top: -40px;
+      left: 91px;
+      width: 100%;
+      background-image: url("./images/Ellipse\ 15.png");
+      height: 120px;
+    }
+  }
+}
+
+//achievement scss
+.achievement {
+  padding: 50px 0;
+  background: #fafffd;
+  .achievement-info {
+    p {
+      font-size: 15px;
+      line-height: 30px;
+      color: #707070;
+      font-weight: 400;
+    }
+  }
+}
+.achi-wrapper {
+  background: $whiteColor;
+  box-shadow: 2px 3px 5px rgba(128, 128, 128, 0.37);
+  border-radius: 50px 0 50px 0;
+  overflow: hidden;
+  margin-top: 20px;
+  padding: 20px;
+  transition: all 1s ease-in-out;
+  .achi-img {
+    width: 35%;
+  }
+  .achi-info {
+    width: 75%;
+    color: #707070;
+  }
+  &:hover {
+    transition: all 1s ease-in-out !important;
+    background: linear-gradient(
+      237deg,
+      #2af598 0%,
+      #009efd 100%,
+      $blackColor 100%
+    );
+    color: $whiteColor !important;
+  }
+}
+
+//dedecated scss;
+.dedecatedBgPositioning {
+  @include position;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    left: -650px;
+    height: 200vh;
+    width: 100%;
+    background-image: url("./images/Group\ 58.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left top;
+  }
+}
+
+.hoverBorder {
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 0 30px #bbc0bed2 !important;
+  border: 2px solid #58bbf000;
+  background-color: $whiteColor;
+  &:hover {
+    border: 2px solid #58bbf0e7;
+    background-color: $whiteColor;
+  }
+  .basic {
+    color: #5d5d5d;
+  }
+  hr {
+    background: #23a3e7a9;
+    height: 1px;
+    width: 60%;
+    margin: auto;
+  }
+  h6 {
+    margin-bottom: 20px;
+  }
+  button {
+    color: $whiteColor;
+    @include radiusButton;
+    &:hover {
+      color: $whiteColor;
+    }
+  }
+}
+
+.search {
+  .searchInput {
+    padding: 10px;
+    box-shadow: 0 0 20px #d8dad9;
+    input {
+      border: none !important;
+      &:focus {
+        border: none !important;
+        outline: none !important;
+        box-shadow: 0 0 0 #7c7c7c00 !important;
+      }
+    }
+    button {
+      color: #ffffff;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+      background: rgb(31, 222, 179);
+      background: -moz-linear-gradient(
+        132deg,
+        rgba(31, 222, 179, 1) 20%,
+        rgba(1, 161, 249, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        132deg,
+        rgba(31, 222, 179, 1) 20%,
+        rgba(1, 161, 249, 1) 100%
+      );
+      background: linear-gradient(
+        132deg,
+        rgba(31, 222, 179, 1) 20%,
+        rgba(1, 161, 249, 1) 100%
+      );
+    }
+    .searchInput button:hover {
+      color: #ffff;
+      background: rgb(31, 222, 179);
+      background: -moz-linear-gradient(
+        -132deg,
+        rgba(31, 222, 179, 1) 20%,
+        rgba(1, 161, 249, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        -132deg,
+        rgba(31, 222, 179, 1) 20%,
+        rgba(1, 161, 249, 1) 100%
+      );
+      background: linear-gradient(
+        -132deg,
+        rgba(31, 222, 179, 1) 20%,
+        rgba(1, 161, 249, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1fdeb3",endColorstr="#01a1f9",GradientType=1);
+    }
+  }
+}
+
+// footer scss;
+
+.footer {
+  a {
+    color: #464646 !important;
+  }
+  .socialIcon{
+    li{
+      margin-right: 20px;
+    }
+  }
+}
+
+//media queries
+@media (min-width: 768px) and (max-width: 991px) {
+  @include pathBg;
+}
+@media (max-width: 767px) {
+  @include pathBg;
+  .banner {
+    .header_info {
+      h1 {
+        font-size: 28px;
+      }
+    }
+  }
+  .run-project {
+    .imgPositioning::before {
+      background-image: none !important;
+    }
+  }
+  .topDot::after {
+    background-image: none !important;
+  }
+  .headerImg {
+    img {
+      height: 300px;
+    }
+  }
+}
